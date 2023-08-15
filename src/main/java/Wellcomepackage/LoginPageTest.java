@@ -25,9 +25,8 @@ public class LoginPageTest {
 	public void loginPageaTest() {
 		driver.findElement(By.name("username")).sendKeys("tomsmith");
 		driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
-		//driver.findElement(By.className("fa fa-2x fa-sign-in")).click();
-		
-	}
+		driver.findElement(By.cssSelector("button[class='radius']")).click();
+	}	
 		
 		@AfterSuite
 		public void close() {
