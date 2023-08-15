@@ -15,7 +15,8 @@ public class LoginPageTest {
 	
 	@BeforeSuite
 	public void beforesuittesting() {
-
+		
+		driver.manage().window().maximize();
 		driver.get("https://the-internet.herokuapp.com/login");
 		System.out.println("BeforeSuit");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
