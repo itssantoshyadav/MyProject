@@ -13,6 +13,7 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
@@ -22,7 +23,7 @@ import org.testng.annotations.Test;
 public class LoginPageTest {
 
 	WebDriver driver = new EdgeDriver();
-	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 	//Wait fluentWait = new FluentWait(driver).withTimeout(Duration.ofSeconds(30)).pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
 
 	@BeforeSuite
@@ -30,7 +31,7 @@ public class LoginPageTest {
 		
 		driver.manage().window().maximize();
 		System.out.println("BeforeSuit");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		
 	}
 
@@ -66,7 +67,7 @@ public class LoginPageTest {
 		
 	}
 	
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public void FindWindowHandles() {
 		driver.get("https://stqatools.com/demo/Windows.php");
 		String parentWindow=driver.getWindowHandle();
@@ -86,6 +87,28 @@ public class LoginPageTest {
 		driver.switchTo().newWindow(WindowType.WINDOW);
 		driver.get("https://www.selenium.dev/blog/");
 		
+		
+	}
+	
+	@Test(priority = 4, enabled = true)
+	public void iframeTesting() {
+		driver.get("https://chercher.tech/practice/frames-example-selenium-webdriver");
+		driver.switchTo().frame("frame1");
+		driver.findElement(By.xpath("//input[@type=\"text\"]")).sendKeys("Hello");
+		driver.switchTo().frame("frame3");
+		driver.findElement(By.cssSelector("input[id='a']")).click();
+		driver.switchTo().parentFrame();
+		driver.switchTo().defaultContent();
+		driver.switchTo().frame("frame2");
+		driver.findElement(By.cssSelector("select[class='col-lg-3']"));
+		Select select= new Select(driver.findElement(By.cssSelector("select[class='col-lg-3']")));
+		select.selectByIndex(2);
+		
+		
+		
+		
+		
+
 		
 	}
 

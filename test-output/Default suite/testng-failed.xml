@@ -6,7 +6,7 @@
       <class name="Wellcomepackage.LoginPageTest">
         <methods>
           <include name="beforesuittesting"/>
-          <include name="FindWindowHandles"/>
+          <include name="iframeTesting"/>
           <include name="close"/>
         </methods>
       </class> <!-- Wellcomepackage.LoginPageTest -->
