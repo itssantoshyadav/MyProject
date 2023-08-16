@@ -1,7 +1,9 @@
 package Wellcomepackage;
 
 import java.time.Duration;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -26,14 +28,14 @@ public class LoginPageTest {
 	public void beforesuittesting() {
 		
 		driver.manage().window().maximize();
-		driver.get("https://the-internet.herokuapp.com/login");
 		System.out.println("BeforeSuit");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 	}
 
-	@Test(priority = 0, enabled=true )  
+	@Test(priority = 0, enabled=false )  
 	public void loginPageaTest() {
+		driver.get("https://the-internet.herokuapp.com/login");
 		// driver.findElement(By.name("username")).sendKeys("tomsmith");
 		driver.findElement(By.cssSelector("input[name='username']")).sendKeys("tomsmith");
 		// driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
@@ -42,7 +44,7 @@ public class LoginPageTest {
 		// driver.findElement(By.partialLinkText("Elemental ")).click();
 	}
 
-	@Test(priority = 1, enabled=true) 
+	@Test(priority = 1, enabled=false) 
 	public void SuccessAlert() {
 		WebElement element=driver .findElement(By.cssSelector("a[class='button secondary radius']"));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -52,7 +54,7 @@ public class LoginPageTest {
 		// assertEquals(msg, " You logged into a secure area!");
 	}
 	
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void lambdatest() {
 		driver.get("https://accounts.lambdatest.com/register");
 		driver.findElement(By.xpath("//input[@id='email' and @name='email']")).sendKeys(Keys.ENTER);
@@ -60,6 +62,22 @@ public class LoginPageTest {
 		driver.findElement(By.cssSelector("input[name='password']")).sendKeys(Keys.ENTER);
 		String msg2=driver.findElement(By.cssSelector("p[data-testid='errors-password']")).getText();
 		System.out.println(msg1+""+msg2);
+		
+	}
+	
+	@Test(priority = 3, enabled = true)
+	public void FindWindowHandles() {
+		driver.get("https://stqatools.com/demo/Windows.php");
+		String parentWindow=driver.getWindowHandle();
+		System.out.println(parentWindow);
+		driver.findElement(By.xpath("//button[contains(text(),'new Tab')]")).click();
+		Set<String> handles=driver.getWindowHandles();
+		System.out.print("Size of handles is "+handles.size());
+		Iterator it = handles.iterator();
+		while(it.hasNext()) {
+			
+		}
+		
 		
 	}
 
