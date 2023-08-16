@@ -102,7 +102,7 @@ public class LoginPageTest {
 		driver.switchTo().frame("frame2");
 		driver.findElement(By.cssSelector("select[class='col-lg-3']"));
 		Select select= new Select(driver.findElement(By.cssSelector("select[class='col-lg-3']")));
-		select.selectByIndex(2);
+		select.selectByIndex(1);
 		
 		
 		
