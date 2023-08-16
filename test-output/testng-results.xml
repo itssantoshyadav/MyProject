@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-16T09:53:37 IST" name="Default suite" finished-at="2023-08-16T09:53:39 IST" duration-ms="1532">
+  <suite started-at="2023-08-16T10:32:51 IST" name="Default suite" finished-at="2023-08-16T10:34:17 IST" duration-ms="85389">
     <groups>
     </groups>
-    <test started-at="2023-08-16T09:53:37 IST" name="Default test" finished-at="2023-08-16T09:53:39 IST" duration-ms="1532">
+    <test started-at="2023-08-16T10:32:51 IST" name="Default test" finished-at="2023-08-16T10:34:17 IST" duration-ms="85389">
       <class name="Wellcomepackage.LoginPageTest">
-        <test-method is-config="true" signature="beforesuittesting()[pri:0, instance:Wellcomepackage.LoginPageTest@37d00a23]" started-at="2023-08-16T09:53:37 IST" name="beforesuittesting" finished-at="2023-08-16T09:53:37 IST" duration-ms="170" status="PASS">
+        <test-method is-config="true" signature="beforesuittesting()[pri:0, instance:Wellcomepackage.LoginPageTest@37d00a23]" started-at="2023-08-16T10:32:51 IST" name="beforesuittesting" finished-at="2023-08-16T10:32:51 IST" duration-ms="175" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforesuittesting -->
-        <test-method signature="FindWindowHandles()[pri:3, instance:Wellcomepackage.LoginPageTest@37d00a23]" started-at="2023-08-16T09:53:37 IST" name="FindWindowHandles" finished-at="2023-08-16T09:53:39 IST" duration-ms="1488" status="PASS">
+        <test-method signature="FindWindowHandles()[pri:3, instance:Wellcomepackage.LoginPageTest@37d00a23]" started-at="2023-08-16T10:32:51 IST" name="FindWindowHandles" finished-at="2023-08-16T10:34:17 IST" duration-ms="85340" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FindWindowHandles -->
-        <test-method is-config="true" signature="close()[pri:0, instance:Wellcomepackage.LoginPageTest@37d00a23]" started-at="2023-08-16T09:53:39 IST" name="close" finished-at="2023-08-16T09:53:39 IST" duration-ms="67" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:Wellcomepackage.LoginPageTest@37d00a23]" started-at="2023-08-16T10:34:17 IST" name="close" finished-at="2023-08-16T10:34:17 IST" duration-ms="393" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->

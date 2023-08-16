@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -73,17 +74,24 @@ public class LoginPageTest {
 		driver.findElement(By.xpath("//button[contains(text(),'new Tab')]")).click();
 		Set<String> handles=driver.getWindowHandles();
 		System.out.print("Size of handles is "+handles.size());
-		Iterator it = handles.iterator();
-		while(it.hasNext()) {
-			
+		for(String tab : handles) {
+			if(! tab.equalsIgnoreCase(parentWindow)) {
+				driver.switchTo().window(tab);
+				driver.findElement(By.xpath("//span[contains(text(),'Java')]")).click();
+				driver.close();
+				}
 		}
+		driver.switchTo().window(parentWindow);
+		driver.findElement(By.xpath("//a[contains(text(),'Login')]")).click();
+		driver.switchTo().newWindow(WindowType.WINDOW);
+		driver.get("https://www.selenium.dev/blog/");
 		
 		
 	}
 
 	@AfterSuite
 	public void close() {
-		driver.close();
+		driver.quit();
 	}
 
 }
